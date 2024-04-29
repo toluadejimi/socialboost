@@ -158,11 +158,6 @@ class PaymentController extends Controller
             send_notification($message);
 
 
-
-
-
-
-
             return back()->with('error', "This Transaction has been successful");
         }
 
@@ -180,9 +175,6 @@ class PaymentController extends Controller
             send_notification($message);
 
 
-
-
-
             return back()->with('error', "This Transaction has been successful");
         }
 
@@ -194,10 +186,6 @@ class PaymentController extends Controller
 
             $message =  "$email | SOCIAL BOOST PLUG | is trying to fund and a successful order with orderid $request->trx_ref";
             send_notification($message);
-
-
-
-
 
 
 
@@ -213,10 +201,6 @@ class PaymentController extends Controller
 
             $message =  "$email | SOCIAL BOOST PLUG | is trying to fund and a successful order with orderid $request->trx_ref";
             send_notification($message);
-
-
-
-
 
 
 
@@ -266,7 +250,7 @@ class PaymentController extends Controller
             $amount = $var->amount ?? null;
 
             if ($status == true) {
-                User::where('id', Auth::id())->increment('wallet', $var->amount);
+                User::where('id', Auth::id())->increment('balance', $var->amount);
                 Transaction::where('ref_id', $request->trx_ref)->update(['status' => 2]);
 
 
@@ -276,11 +260,7 @@ class PaymentController extends Controller
                 send_notification2($message);
 
 
-
-
-
-
-                return redirect('fund-wallet')->with('message', "Transaction successfully Resolved, NGN $amount added to ur wallet");
+                return redirect()->route('user.addFund')->with('message', "Transaction successfully Resolved, NGN $amount added to ur wallet");
             }
 
             if ($status == false) {
@@ -619,7 +599,7 @@ class PaymentController extends Controller
             }
 
             Transaction::where('ref_id', $trx_id)->update(['status' => 2]);
-            User::where('id', Auth::id())->increment('wallet', $amount);
+            User::where('id', Auth::id())->increment('balance', $amount);
 
             $message =  Auth::user()->email . "| just funded NGN" . number_format($request->amount, 2) . " on Log market";
             send_notification($message);

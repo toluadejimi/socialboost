@@ -130,40 +130,40 @@
                                     </div>
                                 </form>
                             </div>
-                            <div class="col-sm-6">
-                                <h4 class="card-title mb-3">@lang('Order Resume')</h4>
-                                <form class="form" id="formDescription">
-                                    <div class="form-group ">
-                                        <label>@lang('Service name')</label>
-                                        <input type="text" class="form-control service_name" disabled>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-4">
-                                            <div class="form-group ">
-                                                <label>@lang('Minimum Amount')</label>
-                                                <input class="form-control minimum_amount" name="min_amount" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group ">
-                                                <label>@lang('Maximum Amount')</label>
-                                                <input type="text" class="form-control maximum_amount" name="max_amount"
-                                                       disabled>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="form-group ">
-                                                <label>@lang("Price per 1k")</label>
-                                                <input type="text" class="form-control price_per" value="0" disabled>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label>@lang('Description')</label>
-                                        <textarea class="form-control description" disabled rows="12"></textarea>
-                                    </div>
-                                </form>
-                            </div>
+{{--                            <div class="col-sm-6">--}}
+{{--                                <h4 class="card-title mb-3">@lang('Order Resume')</h4>--}}
+{{--                                <form class="form" id="formDescription">--}}
+{{--                                    <div class="form-group ">--}}
+{{--                                        <label>@lang('Service name')</label>--}}
+{{--                                        <input type="text" class="form-control service_name" disabled>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col-sm-4">--}}
+{{--                                            <div class="form-group ">--}}
+{{--                                                <label>@lang('Minimum Amount')</label>--}}
+{{--                                                <input class="form-control minimum_amount" name="min_amount" disabled>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-sm-4">--}}
+{{--                                            <div class="form-group ">--}}
+{{--                                                <label>@lang('Maximum Amount')</label>--}}
+{{--                                                <input type="text" class="form-control maximum_amount" name="max_amount"--}}
+{{--                                                       disabled>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-sm-4">--}}
+{{--                                            <div class="form-group ">--}}
+{{--                                                <label>@lang("Price per 1k")</label>--}}
+{{--                                                <input type="text" class="form-control price_per" value="0" disabled>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="form-group ">--}}
+{{--                                        <label>@lang('Description')</label>--}}
+{{--                                        <textarea class="form-control description" disabled rows="12"></textarea>--}}
+{{--                                    </div>--}}
+{{--                                </form>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>
