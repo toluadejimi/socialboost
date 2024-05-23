@@ -15,6 +15,7 @@ class ServiceController extends Controller
             $query->userRate()->where('service_status', 1);
         }])
             ->where('status', 1)
+            ->orderBy('name')
             ->get();
         return view('user.pages.services.show-service', compact('categories'));
     }
@@ -33,6 +34,7 @@ class ServiceController extends Controller
                 return $query->where('category_id', $search['category']);
             })
             ->with(['category'])
+            ->orderBy('name')
             ->get()
             ->groupBy('category.category_title');
         return view('user.pages.services.search-service', compact('services', 'categories'));

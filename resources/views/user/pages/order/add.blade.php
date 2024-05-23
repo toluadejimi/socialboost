@@ -131,11 +131,11 @@
                                 </form>
                             </div>
                             <div class="col-sm-6">
-                                <h4 class="card-title mb-3">@lang('Order Resume')</h4>
+{{--                                <h4 class="card-title mb-3">@lang('Order Resume')</h4>--}}
                                 <form class="form" id="formDescription">
                                     <div class="form-group ">
-                                        <label>@lang('Service name')</label>
-                                        <input type="text" class="form-control service_name" disabled>
+{{--                                        <label>@lang('Service name')</label>--}}
+                                        <input type="text" hidden class="form-control service_name" disabled>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-4">
