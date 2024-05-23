@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\User\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/v1','ApiController@apiV1')->name('userApiKey');
+
+Route::post('e-fund',  [ApiController::class,'e_fund']);
+

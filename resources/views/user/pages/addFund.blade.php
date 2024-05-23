@@ -38,11 +38,6 @@
                 <div class="row mt-5">
 
 
-                    <div class="text-stone-900 text-bold my-3 text-xl center mt-10">
-                        FUND WALLET
-                    </div>
-
-
 
 
                     <div class="col-lg-5 col-sm-12">
@@ -61,7 +56,7 @@
                                         <label class="my-2 mt-4">Select Payment mode</label>
                                         <select name="type" class="form-control">
                                             <option value="1">Instant</option>
-                                            <option value="2">Manual</option>
+
                                         </select>
 
 
