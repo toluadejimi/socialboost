@@ -52,7 +52,18 @@ class ApiController extends Controller
 
         $amount = number_format($request->amount, 2);
 
-        Transaction::where('ref_id', $request->order_id)->update(['status' => 2]);
+        $get_depo = Transaction::where('ref_id', $request->order_id)->first() ?? null;
+        if ($get_depo == null){
+            $trx = new Transaction();
+            $trx->ref_id = $request->order_id;
+            $trx->user_id = $get_user->id;
+            $trx->status = 2;
+            $trx->amount = $request->amount;
+            $trx->type = 2;
+            $trx->save();
+        }else{
+            Transaction::where('ref_id', $request->order_id)->update(['status'=> 2]);
+        }
 
 
         return response()->json([
@@ -62,5 +73,28 @@ class ApiController extends Controller
 
 
     }
+
+
+    public function verify_username(request $request)
+    {
+
+        $get_user =  User::where('email', $request->email)->first() ?? null;
+
+        if($get_user == null){
+
+            return response()->json([
+                'username' => "Not Found, Pleas try again"
+            ]);
+
+        }
+
+        return response()->json([
+            'username' => $get_user->username
+        ]);
+
+
+
+    }
+
 
 }

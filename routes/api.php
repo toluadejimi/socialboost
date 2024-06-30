@@ -19,3 +19,4 @@ Route::post('/v1','ApiController@apiV1')->name('userApiKey');
 
 Route::post('e-fund',  [ApiController::class,'e_fund']);
 
+Route::any('verify',  [ApiController::class,'verify_username']);
